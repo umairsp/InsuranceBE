@@ -59,6 +59,9 @@ const createPolicy = async (req, res) => {
             agentProfit,
             vehicleType,
             notes,
+            agentName,
+            agentContactNumber,
+            policyType,
         } = req.body;
 
         const policyExists = await Policy.findOne({ policyNumber });
@@ -82,6 +85,9 @@ const createPolicy = async (req, res) => {
             agentProfit,
             vehicleType,
             notes,
+            agentName,
+            agentContactNumber,
+            policyType,
             createdBy: req.user._id,
         });
 

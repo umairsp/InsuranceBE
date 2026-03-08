@@ -65,6 +65,16 @@ const policySchema = new mongoose.Schema(
         notes: {
             type: String,
         },
+        agentName: {
+            type: String,
+        },
+        agentContactNumber: {
+            type: String,
+        },
+        policyType: {
+            type: String,
+            enum: ['Package Policy', 'Third Party'],
+        },
         reminderHistory: [
             {
                 dateSent: { type: Date },
