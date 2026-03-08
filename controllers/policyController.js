@@ -5,6 +5,10 @@ const Policy = require('../models/Policy');
 // @access  Private
 const getPolicies = async (req, res) => {
     try {
+        if (!req.user) {
+            return res.status(401).json({ message: 'User not found in request' });
+        }
+
         let policies;
         if (req.user.role === 'Admin') {
             policies = await Policy.find({}).populate('createdBy', 'name email').sort('-createdAt');

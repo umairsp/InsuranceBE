@@ -73,7 +73,6 @@ const policySchema = new mongoose.Schema(
         },
         policyType: {
             type: String,
-            enum: ['Package Policy', 'Third Party'],
         },
         reminderHistory: [
             {
@@ -91,5 +90,5 @@ const policySchema = new mongoose.Schema(
 // Add index on policyEndDate for efficient cron job querying
 policySchema.index({ policyEndDate: 1 });
 
-const Policy = mongoose.model('Policy', policySchema);
+const Policy = mongoose.models.Policy || mongoose.model('Policy', policySchema);
 module.exports = Policy;
