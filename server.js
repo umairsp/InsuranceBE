@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 dotenv.config();
+// Connect to Database
 connectDB();
 
 const app = express();
