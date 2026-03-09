@@ -19,15 +19,22 @@ const policySchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        owner2: {
-            type: String,
-        },
-        owner3: {
-            type: String,
-        },
         mobileNumber: {
             type: String,
             required: true,
+        },
+        isEndorsed: {
+            type: Boolean,
+            default: false,
+        },
+        endorsementNumber: {
+            type: String,
+        },
+        newCustomerName: {
+            type: String,
+        },
+        newMobileNumber: {
+            type: String,
         },
         policyStartDate: {
             type: Date,

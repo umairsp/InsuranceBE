@@ -52,8 +52,6 @@ const createPolicy = async (req, res) => {
             vehicleNumber,
             insuranceCompany,
             owner1,
-            owner2,
-            owner3,
             mobileNumber,
             policyStartDate,
             policyEndDate,
@@ -66,6 +64,10 @@ const createPolicy = async (req, res) => {
             agentName,
             agentContactNumber,
             policyType,
+            isEndorsed,
+            endorsementNumber,
+            newCustomerName,
+            newMobileNumber,
         } = req.body;
 
         const policyExists = await Policy.findOne({ policyNumber });
@@ -78,8 +80,6 @@ const createPolicy = async (req, res) => {
             vehicleNumber,
             insuranceCompany,
             owner1,
-            owner2,
-            owner3,
             mobileNumber,
             policyStartDate,
             policyEndDate,
@@ -92,6 +92,10 @@ const createPolicy = async (req, res) => {
             agentName,
             agentContactNumber,
             policyType,
+            isEndorsed,
+            endorsementNumber,
+            newCustomerName,
+            newMobileNumber,
             createdBy: req.user._id,
         });
 
